@@ -1,6 +1,6 @@
 {
   "name": "HASSIO-WB-MQTT",
-  "version": "0.1",
+  "version": "0.01",
   "slug": "hassio-wb-mqtt",
   "description": "Web UI and a daemon for WB-MQTT-SERIAL. Allows you to run wb-mqtt-serial service inside your HASSIO and edit its config.",
   "webui": "http://[HOST]:[PORT:8099]",
