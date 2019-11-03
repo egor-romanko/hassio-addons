@@ -31,5 +31,5 @@
     "mqtt_user": "str",
     "mqtt_password": "str"
   },
-  "image": "egorromanko/hassio-wb-mqtt/{arch}-hassio-wb-mqtt"
+  "image": "egorromanko/{arch}-hassio-wb-mqtt"
 }
