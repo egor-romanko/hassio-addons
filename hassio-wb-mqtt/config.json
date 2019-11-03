@@ -1,0 +1,35 @@
+{
+  "name": "HASSIO-WB-MQTT",
+  "version": "0.1",
+  "slug": "hassio-wb-mqtt",
+  "description": "Web UI and a daemon for WB-MQTT-SERIAL. Allows you to run wb-mqtt-serial service inside your HASSIO and edit its config.",
+  "webui": "http://[HOST]:[PORT:8099]",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "application",
+  "boot": "auto",
+  "ports": {
+    "8099/tcp": 8099
+  },
+  "devices": ["/dev/ttyUSB0:/dev/ttyUSB0:rwm"],
+  "options": {
+    "root_path": "/",
+    "path_to_config_file": "/data/wb-mqtt-serial.conf",
+    "path_to_history_folder": "/data/history",
+    "path_to_config_schema": "/app/wb-mqtt/wb-mqtt-serial.schema.json",
+    "mqtt_host": "core-mosquitto",
+    "mqtt_port": "1883",
+    "mqtt_user": "",
+    "mqtt_password": ""
+  },
+  "schema": {
+    "root_path": "str",
+    "path_to_config_file": "str",
+    "path_to_history_folder": "str",
+    "path_to_config_schema": "str",
+    "mqtt_host": "str",
+    "mqtt_port": "port",
+    "mqtt_user": "str",
+    "mqtt_password": "str"
+  },
+  "image": "egorromanko/hassio-wb-mqtt/{arch}-hassio-wb-mqtt"
+}
