@@ -4,7 +4,7 @@
   "slug": "hassio-wb-mqtt",
   "description": "Web UI and a daemon for WB-MQTT-SERIAL. Allows you to run wb-mqtt-serial service inside your HASSIO and edit its config.",
   "webui": "http://[HOST]:[PORT:8099]",
-  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "arch": ["armhf", "armv7"],
   "startup": "application",
   "boot": "auto",
   "ports": {
