@@ -5,8 +5,6 @@ before_install:
   - sudo apt-get install jq
   - wget https://raw.githubusercontent.com/bestlibre/hassio-addons/master/build.sh -O build.sh
   - chmod u+x build.sh
-  - wget https://raw.githubusercontent.com/bestlibre/hassio-addons/master/create_hassio_addon.sh -O create_hassio_addon.sh
-  - chmod u+x create_hassio_addon.sh
 env:
   - ADDON="hassio-wb-mqtt"
 script:
