@@ -1,6 +1,9 @@
 sudo: required
 services:
   - docker
+before_install:
+  - sudo apt-get install jq
+  - chmod u+x build.sh
 env:
   - ADDON="hassio-wb-mqtt"
 script:
