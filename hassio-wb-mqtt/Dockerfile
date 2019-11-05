@@ -30,7 +30,7 @@ COPY config/wb-mqtt-serial.conf /etc/
 COPY supervisord.conf /etc/supervisord.conf
 COPY data/run.sh /
 COPY data/options.json /data/options.json
-COPY config/wb-mqtt-serial.conf /data/
+COPY config/wb-mqtt-serial.conf /config/
 
 RUN chmod a+x /run.sh
 CMD ["/run.sh"]
