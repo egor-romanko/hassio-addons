@@ -23,6 +23,5 @@ export MQTT_PORT
 export MQTT_USER
 export MQTT_PASS
 
-printenv
-cp /etc/wb-mqtt-serial.conf.sample $PATH_TO_CONFIG_FILE
+false | cp -i /etc/wb-mqtt-serial.conf.sample $PATH_TO_CONFIG_FILE 2>/dev/null
 /usr/bin/supervisord -c /etc/supervisord.conf
