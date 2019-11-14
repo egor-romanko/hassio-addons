@@ -1,6 +1,6 @@
 {
   "name": "HASSIO-WB-MQTT",
-  "version": "0.04",
+  "version": "0.05",
   "slug": "hassio-wb-mqtt",
   "description": "This addon runs wb-mqtt-serial deamon inside your Hass.io that allows you to integrate your Wirenboard devices (https://wirenboard.com).",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
@@ -12,7 +12,7 @@
     "root_path": "/",
     "path_to_config_file": "/config/wb-mqtt-serial.conf",
     "path_to_history_folder": "/share/history",
-    "path_to_config_schema": "/app/wb-mqtt/wb-mqtt-serial.schema.json",
+    "path_to_config_schema": "/config/wb-mqtt/wb-mqtt-serial.schema.json",
     "mqtt_host": "core-mosquitto",
     "mqtt_port": "1883",
     "mqtt_user": "",

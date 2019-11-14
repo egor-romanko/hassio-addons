@@ -1,6 +1,5 @@
 #!/usr/bin/env bashio
 set -e
-
 CONFIG_PATH=/data/options.json
 
 ROOT_PATH="$(jq --raw-output '.root_path' $CONFIG_PATH)"
@@ -23,5 +22,6 @@ export MQTT_PORT
 export MQTT_USER
 export MQTT_PASS
 
-false | cp -i /etc/wb-mqtt-serial.conf.sample $PATH_TO_CONFIG_FILE 2>/dev/null
+printenv
+if [ ! -f $PATH_TO_CONFIG_FILE  ]; then cp /etc/wb-mqtt-serial.conf.sample $PATH_TO_CONFIG_FILE ; fi 
 /usr/bin/supervisord -c /etc/supervisord.conf
