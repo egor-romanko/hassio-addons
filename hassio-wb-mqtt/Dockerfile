@@ -7,9 +7,9 @@ WORKDIR /usr/src
 
 RUN  apk update && apk upgrade \
      && apk add --no-cache \
-     libc6-compat mosquitto-dev jsoncpp-dev supervisor nodejs \
+     libc6-compat mosquitto-dev jsoncpp-dev supervisor \
      && apk add --no-cache --virtual .build-dependencies \
-     git gcc g++ curl-dev make nodejs-npm \
+     git gcc g++ curl-dev make \
      && mkdir /usr/include/jsoncpp \
      && ln -s /usr/include/json /usr/include/jsoncpp/json \
      && git clone https://github.com/contactless/libwbmqtt \
@@ -21,16 +21,11 @@ RUN  apk update && apk upgrade \
      && make install DESTDIR=/ \
      && rm -fr /usr/src/libwbmqtt \
      && rm -fr /usr/src/wb-mqtt-serial \
-     &&  mkdir /app && cd /app && npm install express fs --production \
-     &&  npm prune --production \
      &&  apk del .build-dependencies
 
-COPY /build/ /app/
-COPY config/wb-mqtt-serial.conf /etc/
 COPY supervisord.conf /etc/supervisord.conf
 COPY data/run.sh /
 COPY data/options.json /data/options.json
-COPY config/wb-mqtt-serial.conf /data/
 
 RUN chmod a+x /run.sh
 CMD ["/run.sh"]

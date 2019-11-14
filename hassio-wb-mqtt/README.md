@@ -4,10 +4,7 @@ This add-on provides a way to integrate and configure [Wirenboard][wirenboard-si
 
 ## About
 
-The addon provides the following features:
- 1. [wb-mqtt-serial] service that acts as a bridge between [Wirenboard][wirenboard-site] devices (use Modbus protocol) and  [Home Assistant][home-assistant] (uses MQTT protocol).
- 1. Web interface that allows to edit the [wb-mqtt-serial] config file.
- 
+The addon runs [wb-mqtt-serial] service that acts as a bridge between [Wirenboard][wirenboard-site] devices (use Modbus protocol) and  [Home Assistant][home-assistant] (uses MQTT protocol).  
 
 Although [wb-mqtt-serial] was designed to work with [Wirenboard][wirenboard-site] devices based on their template system, you can use it with any Modbus device by configuring its channels right in the config file. 
 
@@ -18,6 +15,7 @@ comparison to installing any other Hass.io add-on.
 
 1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install the "hassio-wb-mqtt" add-on.
+1. Edit the configuration file that is located in _/config/wb-mqtt-serial.conf_ by default. Put your configuration there.
 1. Start the "hassio-wb-mqtt" add-on.
 1. Check the logs of the "hassio-wb-mqtt" add-on to see if everything went well.
 
@@ -25,21 +23,20 @@ Please read the rest of this document further instructions.
 
 ## Configuration
 
-On the first run, this add-on creates the default configuration file
-for you. You can modify the configuration using the web interface right from the addon. For documentation on configuring, please refer
-to the [wb-mqtt-serial] repository. Also please check out their [Config Sample][wb-mqtt-serial-sample] and [Existing Templates][wb-mqtt-serial-templates] to get more details.
-The add-on has a configuration possibilities as well.
+On the first run, this add-on copies the example configuration file to **path_to_config_file** folder. You need to modify the configuration using ftp/ssh (Web UI is coming). For documentation on the configuration in the config file, please refer
+to the [wb-mqtt-serial] repository. Also please check out their [Existing Templates][wb-mqtt-serial-templates] to get more details.
+The add-on itself has configuration possibilities as well.
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**Note**: _Remember to restart the add-on when the configuration file is changed._
 
 Example add-on configuration:
 
 ```json
 {
     "root_path": "/",
-    "path_to_config_file": "/data/wb-mqtt-serial.conf",
-    "path_to_history_folder": "/data/history",
-    "path_to_config_schema": "/app/wb-mqtt/wb-mqtt-serial.schema.json",
+    "path_to_config_file": "/config/wb-mqtt-serial.conf",
+    "path_to_history_folder": "/config/history",
+    "path_to_config_schema": "/config/wb-mqtt/wb-mqtt-serial.schema.json",
     "mqtt_host": "core-mosquitto",
     "mqtt_port": "1883",
     "mqtt_user": "your_mqtt_user",
@@ -57,11 +54,11 @@ The path to the the configuration file that is used by [wb-mqtt-serial] daemon.
 
 ### Option: `path_to_history_folder`
 
-Each time when you save changes for the configuration file, the previous version is saved to the history folder. Using this parameter, you can controls the path to this folder.
+_Not used in this revision_
 
 ### Option: `path_to_config_schema`
 
-This parameter is not used fully yet, but it will be used to validate the configuration file against its schema.
+_Not used in this revision_
 
 ### Option: `mqtt_host`
 
@@ -78,8 +75,8 @@ Credentials to your MQTT broker.
 ## Known issues and limitations
 
 - For now can use only **/dev/ttyUSB0** port to work with Modbus adapter.
-- You need to restart the addon manually after you change the configuration.
-- Sometimes when you edit the configuration file using the web interface, you will see some glitches or 'undo' operations after you edit the file.
+- You need to restart the addon manually after you change the configuration file.
+- UI for editing the configuration file is missing
 
 ## Real-world example
 
