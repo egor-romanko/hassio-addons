@@ -1,0 +1,6 @@
+{
+  "root_path": "/",
+  "path_to_config_file": "/config/wb-mqtt-serial-dev.conf",
+  "path_to_history_folder": "/config/history-dev",
+  "path_to_config_schema": "/config/wb-mqtt/wb-mqtt-serial-dev.schema.json"
+}
