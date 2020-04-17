@@ -6,6 +6,7 @@ before_install:
   - chmod u+x build.sh
 env:
   - ADDON="hassio-wb-mqtt"
+  - ADDON="hassio-wb-mqtt-dev"
 script:
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - ./build.sh $ADDON
