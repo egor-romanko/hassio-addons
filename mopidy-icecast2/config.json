@@ -1,6 +1,6 @@
 {
     "name": "Mopidy-Icecast2",
-    "version": "0.0.2",
+    "version": "0.0.16",
     "slug": "mopidy",
     "description": "mopidy music server with icecast2 integration",
     "url": "https://github.com/egor-romanko/hassio-addons/tree/master/mopidy",
@@ -14,7 +14,7 @@
 	"options": [{"name": "str", "value": "str"}]
     },
     "devices": ["/dev/snd:/dev/snd:rwm"],
-    "ports": {"6680/tcp": 6680, "6600/tcp": 6600},
+    "ports": {"6680/tcp": 6680, "6600/tcp": 6600, "8000/tcp": 8000},
     "map": ["share"],
     "webui": "http://[HOST]:[PORT:6680]",
     "host_ipc": true,
