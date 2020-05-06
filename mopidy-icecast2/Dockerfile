@@ -27,7 +27,7 @@ RUN set -ex \
  && apt-key add /tmp/mopidy.gpg \
  && apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        jq mopidy mopidy-spotify mopidy-local-sqlite \
+        jq mopidy mopidy-spotify mopidy-local-sqlite icecast2 sudo\
  && curl -L https://bootstrap.pypa.io/get-pip.py | python - \
  && pip install -U six oauth2client pyasn1 \
  && pip install \
@@ -43,10 +43,11 @@ RUN set -ex \
 
 
 COPY mopidy.conf /var/lib/mopidy/.config/mopidy/mopidy.conf
+COPY icecast.xml /etc/icecast2/
 
 # Copy data for add-on
 COPY run.sh /
 RUN chmod a+x /run.sh
 
-EXPOSE 6600 6680
+EXPOSE 6600 6680 8000
 CMD [ "/run.sh" ]

@@ -1,12 +1,11 @@
 {
     "name": "Mopidy-Icecast2",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "slug": "mopidy",
     "description": "mopidy music server with icecast2 integration",
     "url": "https://github.com/egor-romanko/hassio-addons/tree/master/mopidy",
     "startup": "application",
     "boot": "auto",
-    "image": "egorromanko/{arch}-mopidy-icecast2",
     "audio": true,
     "options": {"local_scan": true,
 	        "options": []},
