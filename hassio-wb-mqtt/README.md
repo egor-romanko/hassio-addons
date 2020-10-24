@@ -74,7 +74,7 @@ Credentials to your MQTT broker.
 
 ## Known issues and limitations
 
-- For now can use only **/dev/ttyUSB0** port to work with Modbus adapter.
+- ~~For now can use only **/dev/ttyUSB0** port to work with Modbus adapter.~~
 - You need to restart the addon manually after you change the configuration file.
 - UI for editing the configuration file is missing
 
