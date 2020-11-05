@@ -18,7 +18,8 @@ RUN  apk update && apk upgrade \
      && ln -s /usr/lib/libjsoncpp.so /usr/lib/libjsoncpp.so.1 \
      && git clone https://github.com/contactless/wb-mqtt-serial \ 
      && cd wb-mqtt-serial/ \
-     && make install DESTDIR=/ \
+     && git checkout b58278b0ed9b53028316f74dd836842f4bccf937 \
+     && make all \
      && rm -fr /usr/src/libwbmqtt \
      && rm -fr /usr/src/wb-mqtt-serial \
      &&  apk del .build-dependencies
