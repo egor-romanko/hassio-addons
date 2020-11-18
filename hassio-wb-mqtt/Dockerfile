@@ -19,7 +19,7 @@ RUN  apk update && apk upgrade \
      && git clone https://github.com/contactless/wb-mqtt-serial \ 
      && cd wb-mqtt-serial/ \
      && git checkout b58278b0ed9b53028316f74dd836842f4bccf937 \
-     && make all \
+     && make install DESTDIR=/ \
      && rm -fr /usr/src/libwbmqtt \
      && rm -fr /usr/src/wb-mqtt-serial \
      &&  apk del .build-dependencies
